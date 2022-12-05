@@ -1,0 +1,73 @@
+* {
+    margin:0;
+    padding:0;
+}
+
+body{
+    background: #ccc;
+    font-family: 'Kenia', cursive;
+
+}
+
+.grid > .cabecera,
+.grid > .contenido,
+.grid > .sidebar,
+.grid > .relacionado,
+.grid > .footer{
+    border: 1px solid red;
+}
+
+.grid{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1em;
+}
+
+.grid .cabecera,
+.grid .footer{
+    grid-column: 1/6;
+    text-align: center;
+    background: black;
+    color: white;
+    padding: 2em;
+}
+
+.contenido{
+    grid-column:span 3;
+}
+
+.articulo{
+    padding: 1em;
+    margin: 1em;
+    background: blanchedalmond;
+}
+
+.sidebar{
+    grid-column: span 2;   
+    text-align: center;
+    padding: 1em;    
+    font-size: 14px;
+
+}
+
+.relacionado{
+    background: cornflowerblue;
+    height: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.5s ease;
+}
+
+.relacionado:hover{
+    opacity: 0.5;
+}
+
+@media screen and (max-width: 768px) {
+
+    .grid > .contenido,
+    .grid > .sidebar,
+    .grid > .relacionado{
+        grid-column: 1/-1;
+    }
+}
